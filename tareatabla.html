@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustos de Afrodita</title>
+    <style>
+        /* Estilo para el fondo de la página */
+        body {
+            background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80'); /* Imagen de una playa al atardecer */
+            background-size: cover; /* Cubre toda la pantalla */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que se repita */
+            background-attachment: fixed; /* Fija el fondo al desplazarse */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white; /* Color del texto para que contraste con el fondo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Centra verticalmente */
+        }
+
+        /* Estilo para la cajita de regalo */
+        .cajita {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .cajita:hover {
+            transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+        }
+
+        .cajita h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .cajita p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Estilo para el contenido oculto */
+        .contenido {
+            display: none; /* Oculta el contenido inicialmente */
+            text-align: center;
+        }
+
+        /* Estilo para la tabla */
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 600px; /* Ancho fijo de la tabla */
+            height: 600px; /* Alto fijo de la tabla */
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para la tabla */
+            border-radius: 10px; /* Bordes redondeados */
+            overflow: hidden; /* Para que las imágenes no sobresalgan */
+        }
+
+        td {
+            padding: 0;
+            width: 200px; /* Ancho fijo de cada celda */
+            height: 200px; /* Alto fijo de cada celda */
+            position: relative; /* Para manejar el tamaño de las imágenes */
+            overflow: hidden; /* Para recortar las imágenes que sobresalgan */
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que las imágenes cubran el espacio sin deformarse */
+            display: block; /* Elimina espacios no deseados */
+        }
+
+        h2 {
+            text-align: center;
+            color: white; /* Color del texto del título */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
+            margin-top: 20px; /* Espacio superior */
+        }
+    </style>
+</head>
+<body>
+    <!-- Cajita de regalo -->
+    <div class="cajita" onclick="mostrarContenido()">
+        <h1>¡Un regalo para ti, color chaufa</h1>
+        <p>dale clik</p>
+    </div>
+
+    <!-- Contenido oculto -->
+    <div class="contenido" id="contenido">
+        <h2>Gustos de mi amiga "Afrodita"</h2>
+        <table border="1">
+            <tr>
+                <td colspan="3">
+                    <img src="materiales/pizza.jpg" alt="Imagen 1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="materiales/cocodrilo.jpg" alt="Imagen 2">
+                </td>
+                <td>
+                    <img src="materiales/daniela.jpg" alt="Imagen 5">
+                </td>
+                <td>
+                    <img src="materiales/postres.jpg" alt="Imagen 3">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <img src="materiales/kimetsu akasa akasa.jpg" alt="Imagen 4">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // Función para mostrar el contenido al hacer clic en la cajita
+        function mostrarContenido() {
+            document.querySelector('.cajita').style.display = 'none'; // Oculta la cajita
+            document.getElementById('contenido').style.display = 'block'; // Muestra el contenido
+        }
+    </script>
+</body>
+</html>
